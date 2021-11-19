@@ -1,5 +1,14 @@
 export class Cliente{
     nome;
-    cpf;
+    _cpf;
     
+    constructor (nome,cpf) {
+        this._cpf = cpf;
+        this.nome = nome;
+    }
+
+    get cpf (){
+        return this._cpf;
+    }
+
 } 

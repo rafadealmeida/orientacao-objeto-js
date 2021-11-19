@@ -15,10 +15,17 @@ export class ContaCorrente{
         return this.#cliente;
     }
 
+
+
     #saldo = 0; // atributo privada.
 
     get saldo() {
         return this.#saldo;
+    }
+
+    constructor(cliente,agencia){
+        this.cliente = cliente;
+        this.agencia = agencia;
     }
 
     sacar(valor){

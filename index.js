@@ -15,6 +15,8 @@ const ContaCorrenteAline = new ContaCorrente(cliente2,1002);
 
 console.log(cliente1);
 
+console.log(ContaCorrente.numeroDeContas);
+
 
 
 

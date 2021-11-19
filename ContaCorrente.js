@@ -1,13 +1,30 @@
+import {Cliente} from "./Cliente.js";
+
 export class ContaCorrente{
     agencia;
-    cliente;
+   
+   
+    #cliente;
+
+    set cliente(novoValor){
+        if(novoValor instanceof Cliente){
+            this.#cliente = novoValor;
+        }
+    }
+    get cliente (){
+        return this.#cliente;
+    }
 
     #saldo = 0; // atributo privada.
+
+    get saldo() {
+        return this.#saldo;
+    }
 
     sacar(valor){
         if(this.#saldo>= valor){
             this.#saldo -= valor;
-            console.log(`${this.cliente.nome}, seu saldo é de ${this.#saldo}`);
+            console.log(`${this.#cliente.nome}, seu saldo é de ${this.#saldo}`);
             return valor; 
         }else{
             console.log("Saldo inválido para a operação.");
@@ -22,7 +39,7 @@ export class ContaCorrente{
             this.#saldo += deposito;
 
         }
-        console.log(`${this.cliente.nome}, seu saldo é de ${this.#saldo}`);
+        console.log(`${this.#cliente.nome}, seu saldo é de ${this.#saldo}`);
     }
     transferir(valor, conta){
         const valorSacado =this.sacar(valor);

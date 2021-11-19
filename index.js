@@ -14,18 +14,17 @@ cliente2.nome = "Aline";
 cliente2.cpf = 88822233309;
 
 const ContaCorrenteAline = new ContaCorrente();
-ContaCorrenteAline.agencia = 1001;
+ContaCorrenteAline.agencia = 1002;
 ContaCorrenteAline.cliente = cliente2;
 
 
 
-console.log(cliente1);
 
-console.log(cliente2);
+console.log(ContaCorrenteAline.cliente);
 
-ContaCorrenteAline.depositar(500);
 
-ContaCorrenteAline.transferir(200, ContaCorrenteRicardo)
+
+
 
 
 

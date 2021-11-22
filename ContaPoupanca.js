@@ -1,23 +1,8 @@
 import{ ContaCorrente } from "./ContaCorrente.js";
+import { Conta } from "./Conta.js";
 
-export class ContaPoupanca{
-    _cliente;
-    _saldoInicial;
-    _agencia;
-
+export class ContaPoupanca extends Conta{
+   
     constructor(saldoInicial,cliente,agencia){
-        this._saldoInicial = saldoInicial;
-        this._cliente =cliente;
-        this._agencia = agencia;
-    }
-
-    get_cliente(){
-        return this._cliente;
-    }
-    get_saldoInicial(){
-        return this._saldoInicial;
-    }
-    get_agencia(){
-        return this._agencia;
-    }
+    } 
 }

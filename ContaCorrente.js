@@ -1,58 +1,10 @@
 import {Cliente} from "./Cliente.js";
+import { Conta } from "./Conta.js";
 
-export class ContaCorrente{
+export class ContaCorrente extends Conta{
     static numeroDeContas = 0;
    
     constructor(cliente,agencia){
-        this.#cliente = cliente;
-        this.agencia = agencia;
-        this.#saldo = 0;
         ContaCorrente.numeroDeContas ++
-    }
-    
-    
-    #cliente;
-
-    set cliente(novoValor){
-        if(novoValor instanceof Cliente){
-            this.#cliente = novoValor;
-        }
-    }
-    get cliente (){
-        return this.#cliente;
-    }
-
-
-
-    #saldo = 0; // atributo privada.
-
-    get saldo() {
-        return this.#saldo;
-    }
-
-
-    sacar(valor){
-        if(this.#saldo>= valor){
-            this.#saldo -= valor;
-            console.log(`${this.#cliente.nome}, seu saldo é de ${this.#saldo}`);
-            return valor; 
-        }else{
-            console.log("Saldo inválido para a operação.");
-        }
-        //devido o atributo ser privado, só podemos acessa-la dentro da classe, dentro do metodo 
-    }
-    depositar(deposito){
-        if(deposito<= 0){
-            console.log("Depósito inválido para a operação.");
-        }
-        else{
-            this.#saldo += deposito;
-
-        }
-        console.log(`${this.#cliente.nome}, seu saldo é de ${this.#saldo}`);
-    }
-    transferir(valor, conta){
-        const valorSacado =this.sacar(valor);
-        conta.depositar(valorSacado);
     }
 }

@@ -14,24 +14,24 @@ export class Conta{
         }
     }
     get cliente (){
-        return this.#cliente;
+        return this._cliente;
     }
 
     get saldo() {
-        return this.#saldo;
+        return this._saldo;
     }
 
-    get _saldoInicial(){
+    get saldoInicial(){
         return this._saldoInicial;
     }
-    get _agencia(){
+    get agencia(){
         return this._agencia;
     }
    
     sacar(valor){
-        if(this.#saldo>= valor){
-            this.#saldo -= valor;
-            console.log(`${this.#cliente.nome}, seu saldo é de ${this.#saldo}`);
+        if(this._saldo>= valor){
+            this._saldo -= valor;
+            console.log(`${this._cliente.nome}, seu saldo é de ${this._saldo}`);
             return valor; 
         }else{
             console.log("Saldo inválido para a operação.");
@@ -43,10 +43,10 @@ export class Conta{
             console.log("Depósito inválido para a operação.");
         }
         else{
-            this.#saldo += deposito;
+            this._saldo += deposito;
 
         }
-        console.log(`${this.#cliente.nome}, seu saldo é de ${this.#saldo}`);
+        console.log(`${this._cliente.nome}, seu saldo é de ${this._saldo}`);
     }
     transferir(valor, conta){
         const valorSacado =this.sacar(valor);

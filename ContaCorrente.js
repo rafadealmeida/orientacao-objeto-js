@@ -5,6 +5,7 @@ export class ContaCorrente extends Conta{
     static numeroDeContas = 0;
    
     constructor(cliente,agencia){
+        super(cliente,agencia);
         ContaCorrente.numeroDeContas ++
     }
 }

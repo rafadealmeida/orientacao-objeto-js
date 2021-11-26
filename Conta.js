@@ -6,7 +6,7 @@ export class Conta{
         this._agencia = agencia;
     }
 
-    #cliente;
+    
 
     set cliente(novoValor){
         if(novoValor instanceof Cliente){

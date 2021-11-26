@@ -19,25 +19,28 @@ export class Conta{
         return this._saldo;
     }
 
-    sacar(valor) {
-        taxa = 1.1 * valor;
-        if (this._saldo >= valor) {
+    sacar(valor){
+        if(this._saldo>= valor){
             this._saldo -= valor;
-            return valor;
+            console.log(`${this._cliente.nome}, seu saldo é de ${this._saldo}`);
+            return valor; 
+        }else{
+            console.log("Saldo inválido para a operação.");
         }
+        //devido o atributo ser privado, só podemos acessa-la dentro da classe, dentro do metodo 
     }
-
-    depositar(valor) {
-        if (valor <= 100) {
-            return;
+    depositar(deposito){
+        if(deposito<= 0){
+            console.log("Depósito inválido para a operação.");
         }
-        this._saldo += valor;
+        else{
+            this._saldo += deposito;
+
+        }
+        console.log(`${this._cliente.nome}, seu saldo é de ${this._saldo}`);
     }
-
-    transferir(valor, conta) {
-
-        const valorSacado = this.sacar(valor);
+    transferir(valor, conta){
+        const valorSacado =this.sacar(valor);
         conta.depositar(valorSacado);
-
     }
 }
